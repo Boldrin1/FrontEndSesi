@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: lightgray;
+        }
+
+        .carro {
+            position: relative;
+            animation: movercarro 5s linear infinite;
+        }
+
+        .corpo {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 20px;
+        }
+
+        .roda {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border-radius: 50%;
+            animation: girar-roda 1s linear infinite;
+        }
+
+        .roda::before,
+        .roda::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background-color: white;
+            transform-origin: center;
+        }
+
+        .roda::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .roda::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        #roda1 {
+            left: 20px;
+        }
+
+        #roda2 {
+            right: 20px;
+        }
+
+        @keyframes movercarro {
+            0% {
+                transform: translateX(0);
+            } 
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        @keyframes girar-roda {
+            from {
+                transform: rotate(0);
+            } 
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carro">
+        <div class="corpo"></div>
+        <div class="roda" id="roda1"></div>
+        <div class="roda" id="roda2"></div>
+    </div>
+</body>
+</html>
