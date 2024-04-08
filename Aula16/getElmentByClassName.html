@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>O elemento getElementByClassName()</h2>
+    <div class="example">
+       <p>Isso é um parágrafo</p>
+    </div>
+
+    <div class="example cor">
+         <p>Isso aqui é um paragrafo</p>
+    </div> 
+
+    <div class="example cor">
+        <p>Isso aqui é um paragrafo</p>
+    </div> 
+
+    <script>
+        const fernando = document.getElementsByClassName('example')
+        fernando[1].style.backgroundColor= 'blue'
+        fernando[0].style.backgroundColor= 'pink'
+
+        const cor = document.getElementsByClassName('cor');
+        cor[0].style.backgroundColor= 'pink';
+    </script>
+</body>
+</html>
