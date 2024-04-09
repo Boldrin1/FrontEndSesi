@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de getElementById</title>
+</head>
+<body>
+    <h1>Modificar o conteudo de um elemento</h1>
+    <div id="meuElemento">Conteudo inicial</div>
+    <button onclick="modificar()">Mudar</button>
+    <hr>
+    <h1>Alterar o estilo do elemento</h1>
+    <div id="cor">Texto colorido</div>
+    <button onclick="colorir()">Colorir</button>
+    <hr>
+    <input id="texto" type="text" value="Texto Inicial">
+    <button onclick="pegar()">Pegar texto</button>
+    <p id="conteudo"></p>
+    <hr>
+    <div id="esconde">Texto para esconder</div>
+    <button onclick="escoder(document.getElementById('esconde'))">Clique para esconder</button>
+    <button onclick="aparecer(document.getElementById('esconde'))">Clique para aparecer</button>
+    <hr>
+    <section style="display: flex; align-items: center;">
+        <img src="./tigre.jpg" alt="imagem-tigre" id="tigre">
+        <button onclick="escoder(document.getElementById('tigre'))">Clique para esconder img</button>
+        <button onclick="aparecer(document.getElementById('tigre'))">Clique para aparecer img</button>
+    </section>
+</body>
+<script>
+    function pegar(){
+        var elemento = document.getElementById("texto");
+        var conteudo = document.getElementById("conteudo");
+        let valor = elemento.value
+        conteudo.innerHTML = valor;
+
+    }
+
+    function escoder(elemento) {
+        elemento.style.display = "none"
+    }
+
+    function aparecer(elemento) {
+        elemento.style.display = "block"
+    }
+
+    function modificar(){
+        var elemento = document.getElementById("meuElemento");
+        elemento.innerHTML = "Gabi";
+    }
+
+    function colorir(){
+        var elemento = document.getElementById("cor");
+        elemento.style.fontSize="150px";
+        elemento.style.color="red";
+        elemento.style.fontWeight="bold";
+    }
+    pegar()
+</script>
+</html>
